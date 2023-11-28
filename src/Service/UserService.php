@@ -52,7 +52,7 @@ class UserService
         $user->setLastName($data['last_name']);
         $user->setCity($data['city']);
         $user->setCountry($data['country']);
-        $user->getSession()->setAccessToken($data['access_token']);
+        $user->getSession()?->setAccessToken($data['access_token']);
         $this->entityManager->flush();
     }
 }

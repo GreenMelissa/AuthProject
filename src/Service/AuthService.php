@@ -50,7 +50,7 @@ class AuthService
                 $user = $this->userService->createUser($this->credentials);
             }
             return [
-                'access_token' => $user->getSession()->getAccessToken(),
+                'access_token' => $user->getSession()?->getAccessToken(),
                 'user_info' => [
                     'id' => $user->getId(),
                     'first_name' => $user->getFirstName(),
